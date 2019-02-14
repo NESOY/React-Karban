@@ -24,4 +24,5 @@ List.propTypes = {
     title: PropTypes.string.isRequired,
     cards: PropTypes.arrayOf(PropTypes.object)
 }
+
 export default List;

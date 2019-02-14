@@ -1,0 +1,24 @@
+import React, {Component, PropTypes} from 'react';
+
+class SearchBar extends Component{
+    handleChange(event){
+        this.props.onUserInput(event.target.value)
+    }
+
+    render(){
+        return (
+            <input
+                type="text"
+                placeholder="search"
+                value={this.props.filterText}
+                onChange={this.handleChange.bind(this)}></input>
+        )
+    };
+}
+
+SearchBar.PropTypes = {
+    onUserInput: PropTypes.func.isRequired,
+    filterText: PropTypes.string.isRequired
+}
+
+export default SearchBar;
