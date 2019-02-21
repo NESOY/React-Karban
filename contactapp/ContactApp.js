@@ -1,31 +1,37 @@
-import React, {Component, PropTypes} from 'react';
-import SearchBar from './SearchBar';
-import ContactList from './ContactList';
+import React, { Component, PropTypes } from "react";
+import SearchBar from "./SearchBar";
+import ContactList from "./ContactList";
 
-class ContactApp extends Component{
-    constructor(){
-        super();
-        this.state = {
-            filterText: ''
-        };
-    }
+class ContactApp extends Component {
+	constructor() {
+		super();
+		this.state = {
+			filterText: ""
+		};
+	}
 
-    handleUserInput(searchTerm){
-        this.setState({filterText:searchTerm})
-    }
+	handleUserInput(searchTerm) {
+		this.setState({ filterText: searchTerm });
+	}
 
-    render(){
-        return (
-            <div>
-                <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)}/>
-                <ContactList contacts={this.props.contacts} filterText={this.state.filterText}></ContactList>
-            </div>
-        )
-    };
+	render() {
+		return (
+			<div>
+				<SearchBar
+					filterText={this.state.filterText}
+					onUserInput={this.handleUserInput.bind(this)}
+				/>
+				<ContactList
+					contacts={this.props.contacts}
+					filterText={this.state.filterText}
+				/>
+			</div>
+		);
+	}
 }
 
 ContactApp.PropTypes = {
-    contacts: PropTypes.arrayOf(PropTypes.object)
-}
+	contacts: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default ContactApp;

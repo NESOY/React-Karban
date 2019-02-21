@@ -1,8 +1,5 @@
-import React from 'react';
-import {
-    render,
-} from 'react-dom';
-import ContactsAppContainer from './ContactsAppContainer';
+import React from "react";
+import { render } from "react-dom";
+import ContactsAppContainer from "./ContactsAppContainer";
 
-render( < ContactsAppContainer / > , document.getElementById('root'));
-g
+render(<ContactsAppContainer />, document.getElementById("root"));
